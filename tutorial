@@ -1,0 +1,70 @@
+                    ┌───────────────┐
+                    │     START     │
+                    └───────┬───────┘
+                            │
+                            ▼
+          ┌────────────────────────────────┐
+          │ Import os and shutil libraries │
+          └───────────────┬────────────────┘
+                          │
+                          ▼
+      ┌──────────────────────────────────────┐
+      │ Ask user to enter the folder path    │
+      └─────────────────┬────────────────────┘
+                        │
+                        ▼
+             ┌──────────────────────┐
+             │ Does folder exist?   │
+             └───────┬────────┬─────┘
+                     │Yes     │No
+                     │        │
+                     ▼        ▼
+      ┌──────────────────┐   ┌──────────────────────┐
+      │ Create category  │   │ Display error        │
+      │ folders if needed│   │ "Folder not found"   │
+      └────────┬─────────┘   └──────────┬───────────┘
+               │                        │
+               ▼                        ▼
+ ┌────────────────────────────────┐   ┌───────────┐
+ │ Read all files in the folder   │   │    END    │
+ └───────────────┬────────────────┘   └───────────┘
+                 │
+                 ▼
+      ┌──────────────────────────┐
+      │ Is the item a folder?    │
+      └───────┬─────────┬────────┘
+              │Yes      │No
+              │         │
+              ▼         ▼
+      Skip this item   Get file extension
+              │         │
+              └────┬────┘
+                   ▼
+      ┌──────────────────────────┐
+      │ Match extension with     │
+      │ predefined categories    │
+      └───────┬─────────┬────────┘
+              │Found    │Not Found
+              │         │
+              ▼         ▼
+ ┌─────────────────────┐ ┌────────────────────┐
+ │ Move file to the    │ │ Move file to       │
+ │ corresponding folder│ │ "Others" folder    │
+ └───────────┬─────────┘ └─────────┬──────────┘
+             │                     │
+             └──────────┬──────────┘
+                        ▼
+         ┌──────────────────────────┐
+         │ More files remaining?    │
+         └───────┬────────┬─────────┘
+                 │Yes     │No
+                 │        │
+                 ▼        ▼
+           Process next   Display
+               file      "All files organized
+                            successfully!"
+                            │
+                            ▼
+                      ┌───────────┐
+                      │    END    │
+                      └───────────┘
